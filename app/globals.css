@@ -164,6 +164,23 @@ textarea:focus {
   animation: subtle-pulse 3s ease-in-out infinite;
 }
 
+/* Floating animation for decorative yellow lines */
+@keyframes float-underline {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-4px) scaleX(1.02);
+    opacity: 1;
+  }
+}
+
+.animate-float-line {
+  animation: float-underline 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
 /* Smooth transitions for all interactive elements */
 a,
 button,

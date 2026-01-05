@@ -11,31 +11,31 @@ const FOUNDERS = [
   {
     name: "Aashika Ojha",
     image: "https://github.com/sanil18/biruwa/blob/main/assets/Aashika.jpg?raw=true",
-    role: "Founder",
+    role: "Co-founder",
     bio: "Meet Aashika, a law student and research enthusiast at Nepal Law Campus. She celebrates nature, loves traveling and swimming, and cares deeply about human rights and climate justice.",
   },
   {
     name: "Babita Tamang",
     image: "https://github.com/sanil18/biruwa/blob/main/assets/Babita.jpg?raw=true",
-    role: "Founder",
+    role: "Co-founder",
     bio: "Meet Babita, a law graduate and intersectional youth activist. She enjoys critical discussions, books, and writing, often seen at MUNs and forums—and when off-duty, doting on cats, trees, and flowers.",
   },
   {
     name: "Garima Bista",
     image: "https://github.com/sanil18/biruwa/blob/main/assets/Garima.jpg?raw=true",
-    role: "Founder",
+    role: "Co-founder",
     bio: "Meet Garima, a lawyer with 3+ years in human rights. She loves tea, books, and her dog Luna, and brings a circular-economy lens to inspire sustainable habits and a greener society.",
   },
   {
     name: "Jeena Yadav",
     image: "https://github.com/sanil18/biruwa/blob/main/assets/Jeena%20.jpg?raw=true",
-    role: "Founder",
+    role: "Co-founder",
     bio: "Meet Jeena, a 2nd-year law student advocating eco-friendly development, climate justice, and environmental rights through informed legal action.",
   },
   {
     name: "Shistata Bhattarai",
     image: "https://github.com/sanil18/biruwa/blob/main/assets/shistata.jpg?raw=true",
-    role: "Founder",
+    role: "Co-founder",
     bio: "Meet Shistata, an ACCA student with a BBS who applies financial skills to climate justice and sustainability—focusing on accountability and transparent fund management.",
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
@@ -95,7 +95,7 @@ export default function MembersPage() {
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 font-display relative inline-block">
               Passionate Individuals
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none">
+              <svg className="absolute -bottom-4 left-0 w-full animate-float-line" viewBox="0 0 200 8" preserveAspectRatio="none">
                 <path
                   d="M0,5 Q40,0 80,5 T160,5 T240,5"
                   fill="none"
@@ -114,7 +114,7 @@ export default function MembersPage() {
           {/* Founders Section */}
           <section className="mb-24">
             <div className="flex items-center gap-4 mb-12">
-              <h2 className="text-3xl font-bold text-emerald-700 font-display">Founders</h2>
+              <h2 className="text-3xl font-bold text-emerald-700 font-display">Co-founders</h2>
               <div className="h-px flex-grow bg-dashed border-b border-emerald-600/30" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">

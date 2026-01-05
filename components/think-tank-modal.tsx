@@ -19,7 +19,7 @@ export default function ThinkTankModal({ isOpen, onOpenChange }: ThinkTankModalP
           {/* Introduction */}
           <section>
             <p className="text-base leading-relaxed">
-              Biruwa's Think Tank is an initiative developed by the four founders who wanted more people to talk about
+              Biruwa's Think Tank is an initiative developed by the five co-founders who wanted more people to talk about
               the current issues of climate justice and governance and not just talk but think. We wanted people to come
               together and think meaningfully with a purpose, a purpose to not just understand yourself but also create
               outcomes that would ultimately make the targeted groups think about the issue which they never thought

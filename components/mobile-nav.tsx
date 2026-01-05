@@ -34,12 +34,12 @@ export default function MobileNav() {
       {isOpen && (
         <>
           {/* Test overlay - bright color to ensure visibility */}
-          <div 
-            className="fixed inset-0 bg-red-500/30 z-[60] md:hidden" 
+          <div
+            className="fixed inset-0 bg-red-500/30 z-[60] md:hidden"
             onClick={closeMenu}
             style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
           />
-          <div 
+          <div
             className="fixed top-16 left-0 right-0 bg-[#FFFBF5] border-b-2 border-dashed border-emerald-600/30 z-[70] md:hidden shadow-xl"
             style={{ position: 'fixed', top: '64px', left: 0, right: 0, backgroundColor: '#FFFBF5' }}
           >
@@ -80,6 +80,13 @@ export default function MobileNav() {
                   onClick={closeMenu}
                 >
                   Members
+                </Link>
+                <Link
+                  href="/blogs"
+                  className="font-medium text-slate-800 hover:text-emerald-700 transition-colors py-3 px-4 rounded-lg hover:bg-emerald-50 border border-transparent hover:border-emerald-200 block"
+                  onClick={closeMenu}
+                >
+                  Blogs
                 </Link>
                 <Link
                   href="/#podcast"

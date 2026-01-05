@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 import StickyNote from "@/components/sticky-note"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Instagram, Linkedin } from "lucide-react"
 import Footer from "@/components/footer"
 
 type SubmitStatus = { type: "success" | "error"; message: string } | null
@@ -39,22 +39,25 @@ export default function ContactPage() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
+    const formDataToSend = new FormData()
+    formDataToSend.append("access_key", "0f075c1e-147d-4344-a03c-0a251a55da0b")
+    formDataToSend.append("name", formData.name)
+    formDataToSend.append("email", formData.email)
+    formDataToSend.append("message", formData.reason)
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       })
 
       const data = await response.json()
 
-      if (response.ok) {
+      if (data.success) {
         setSubmitStatus({ type: "success", message: "Thank you! Your message has been sent successfully." })
         setFormData({ name: "", email: "", reason: "" })
       } else {
-        setSubmitStatus({ type: "error", message: data.error || "Failed to send message. Please try again." })
+        setSubmitStatus({ type: "error", message: data.message || "Failed to send message. Please try again." })
       }
     } catch (error) {
       setSubmitStatus({ type: "error", message: "An error occurred. Please try again." })
@@ -83,7 +86,7 @@ export default function ContactPage() {
                 <span className="relative inline-block">
                   Let's Work Together
                   <svg
-                    className="absolute -bottom-1 sm:-bottom-2 left-0 w-full"
+                    className="absolute -bottom-3 sm:-bottom-4 left-0 w-full animate-float-line"
                     viewBox="0 0 200 8"
                     preserveAspectRatio="none"
                   >
@@ -173,9 +176,8 @@ export default function ContactPage() {
                     {/* Status Messages */}
                     {submitStatus && (
                       <div
-                        className={`p-4 rounded-lg text-sm font-medium ${
-                          submitStatus.type === "success" ? "bg-emerald-100 text-emerald-800" : "bg-red-100 text-red-800"
-                        }`}
+                        className={`p-4 rounded-lg text-sm font-medium ${submitStatus.type === "success" ? "bg-emerald-100 text-emerald-800" : "bg-red-100 text-red-800"
+                          }`}
                       >
                         {submitStatus.message}
                       </div>
@@ -201,30 +203,58 @@ export default function ContactPage() {
                   <div className="space-y-3">
                     <p className="text-sm text-slate-700">
                       <strong>Email:</strong>{" "}
-                      <a href="mailto:biruwafoundation@gmail.com" className="text-emerald-600 hover:text-emerald-700">
-                        biruwafoundation@gmail.com
+                      <a href="mailto:campaignbiruwa@gmail.com" className="text-emerald-600 hover:text-emerald-700">
+                        campaignbiruwa@gmail.com
                       </a>
                     </p>
-                    <p className="text-sm text-slate-700">
+                    <p className="text-sm text-slate-700 flex items-center gap-2">
+                      <div className="w-5 h-5 flex items-center justify-center bg-emerald-100 rounded-full">
+                        <Instagram className="w-3 h-3 text-emerald-600" />
+                      </div>
                       <strong>Instagram:</strong>{" "}
                       <a
                         href="https://www.instagram.com/biruwa/?igsh=bzBnNHRrcmI0dTAz"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-600 hover:text-emerald-700"
+                        className="text-emerald-600 hover:text-emerald-700 font-medium"
                       >
                         @biruwa
                       </a>
                     </p>
-                    <p className="text-sm text-slate-700">
+                    <p className="text-sm text-slate-700 flex items-center gap-2">
+                      <div className="w-5 h-5 flex items-center justify-center bg-emerald-100 rounded-full">
+                        <Linkedin className="w-3 h-3 text-emerald-600" />
+                      </div>
                       <strong>LinkedIn:</strong>{" "}
                       <a
                         href="https://www.linkedin.com/company/biruwa/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-emerald-600 hover:text-emerald-700"
+                        className="text-emerald-600 hover:text-emerald-700 font-medium"
                       >
                         Biruwa
+                      </a>
+                    </p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2">
+                      <div className="w-5 h-5 flex items-center justify-center bg-emerald-100 rounded-full">
+                        <svg
+                          viewBox="0 0 24 24"
+                          width="12"
+                          height="12"
+                          fill="currentColor"
+                          className="text-emerald-600"
+                        >
+                          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47V18c0 1.94-.66 3.82-1.88 5.32-1.22 1.5-2.95 2.58-4.87 3.03-1.92.45-3.95.28-5.76-.48-1.81-.76-3.32-2.12-4.26-3.84-.94-1.72-1.29-3.71-.98-5.64.31-1.93 1.25-3.72 2.67-5.07 1.42-1.35 3.25-2.22 5.2-2.46 1.95-.24 3.94.13 5.67 1.05V10c-1.45-1.04-3.32-1.41-5.04-1.01-1.72.4-3.21 1.48-4.11 2.99-.9 1.51-1.16 3.32-.71 5.04.45 1.72 1.58 3.21 3.12 4.11 1.54.9 3.42 1.11 5.12.59 1.7-.52 3.1-1.79 3.86-3.46.26-.59.4-1.22.41-1.86.02-2.73 0-5.46.01-8.19-.01-1.13-.01-2.26 0-3.39z" />
+                        </svg>
+                      </div>
+                      <strong>TikTok:</strong>{" "}
+                      <a
+                        href="https://www.tiktok.com/@biruwafoundation?_r=1&_t=ZS-92oNVpKhXmS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-600 hover:text-emerald-700 font-medium"
+                      >
+                        @biruwafoundation
                       </a>
                     </p>
                   </div>

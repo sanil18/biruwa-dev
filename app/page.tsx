@@ -11,11 +11,12 @@ import OptimizedBackground from "@/components/optimized-background"
 import Navbar from "@/components/navbar"
 import { useState, useEffect } from "react"
 import { projectDb } from "@/lib/db"
+import type { Project } from "@/lib/db"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import Footer from "@/components/footer"
 
 export default function Home() {
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
     const allProjects = projectDb
@@ -48,7 +49,7 @@ export default function Home() {
                 <span className="relative inline-block">
                   Turning simple talks into meaningful conversations
                   <svg
-                    className="absolute -bottom-3 sm:-bottom-4 left-0 w-full"
+                    className="absolute -bottom-3 sm:-bottom-4 left-0 w-full animate-float-line"
                     viewBox="0 0 200 8"
                     preserveAspectRatio="none"
                   >
@@ -97,14 +98,14 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 inline-block relative font-display">
                 About Us
                 <svg
-                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full animate-float-line"
                   viewBox="0 0 100 8"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0,5 Q20,0 40,5 T80,5 T120,5"
                     fill="none"
-                    stroke="#F59E0B"
+                    stroke="#10B981"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -166,14 +167,14 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 inline-block relative font-display">
                 Our Journey
                 <svg
-                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full"
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full animate-float-line"
                   viewBox="0 0 100 8"
                   preserveAspectRatio="none"
                 >
                   <path
                     d="M0,5 Q20,0 40,5 T80,5 T120,5"
                     fill="none"
-                    stroke="#F59E0B"
+                    stroke="#0EA5E9"
                     strokeWidth="3"
                     strokeLinecap="round"
                   />
@@ -192,13 +193,22 @@ export default function Home() {
         <section id="projects" className="py-12 sm:py-16 relative">
           <div className="container px-4 sm:px-6">
             <ScrollReveal className="text-center mb-8 sm:mb-12" delay={100}>
-              <div className="inline-block mb-4">
-                <StickyNote color="blue" rotate="rotate-1">
-                  <span className="font-handwriting text-sm sm:text-lg text-slate-800">What we do</span>
-                </StickyNote>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display">Our Projects</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display relative inline-block">
+                Our Projects
+                <svg
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full animate-float-line"
+                  viewBox="0 0 100 8"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,5 Q20,0 40,5 T80,5 T120,5"
+                    fill="none"
+                    stroke="#8B5CF6"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </h2>
               <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto px-4">
                 Explore our initiatives for climate justice and environmental governance
               </p>
@@ -209,11 +219,15 @@ export default function Home() {
                 projects.map((project, index) => (
                   <ScrollReveal key={project.id} delay={200 + index * 100}>
                     <ProjectCard
+                      key={project.id}
                       title={project.title}
                       description={project.description}
-                      icon={project.icon}
-                      color={project.color}
+                      icon={project.icon || "book"}
+                      color={project.color || "emerald"}
+                      date={project.date}
                       imageUrl={project.imageUrl}
+                      images={project.images}
+                      projectId={project.id}
                     />
                   </ScrollReveal>
                 ))
@@ -260,13 +274,22 @@ export default function Home() {
         <section id="podcast" className="py-12 sm:py-16 relative">
           <div className="container px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-12">
-              <div className="inline-block mb-4">
-                <StickyNote color="purple" rotate="rotate-1">
-                  <span className="font-handwriting text-sm sm:text-lg text-slate-800">Listen in</span>
-                </StickyNote>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display">Our Podcast</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 font-display relative inline-block">
+                Our Podcast
+                <svg
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full animate-float-line"
+                  viewBox="0 0 100 8"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,5 Q20,0 40,5 T80,5 T120,5"
+                    fill="none"
+                    stroke="#F3969A"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </h2>
               <p className="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto px-4">
                 Conversations on climate justice, activism, and change-making
               </p>

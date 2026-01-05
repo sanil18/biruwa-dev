@@ -8,18 +8,17 @@ export default function PrivacyPolicy() {
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b-2 border-dashed border-emerald-600/30 bg-[#FFFBF5]/95 backdrop-blur">
         <div className="container flex h-16 items-center justify-between px-4 sm:px-6">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0">
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-14 w-14 sm:h-16 sm:w-16 flex-shrink-0 transition-transform duration-300 group-hover:rotate-6">
               <Image
-                src="https://raw.githubusercontent.com/sanil18/biruwa/refs/heads/main/assets/Biruwa%20Logo%20(2).png"
+                src="https://github.com/sanil18/biruwa/blob/main/assets/new-logo%20(1).png?raw=true"
                 alt="Biruwa Logo"
-                width={48}
-                height={48}
+                width={64}
+                height={64}
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="font-handwriting text-xl sm:text-2xl font-bold text-emerald-700">Biruwa</span>
           </Link>
         </div>
       </header>
@@ -27,7 +26,7 @@ export default function PrivacyPolicy() {
       <main className="flex-grow container px-4 sm:px-6 py-12 sm:py-16 max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-slate-900">Privacy Policy</h1>
         <div className="prose prose-lg max-w-none text-slate-700">
-          <p className="text-sm text-slate-500 mb-8">Last Updated: December 8, 2025</p>
+          <p className="text-sm text-slate-500 mb-8">Last Updated: January 5, 2026</p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900">1. Introduction</h2>
           <p>
@@ -123,7 +122,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-2xl font-semibold mt-8 mb-4 text-slate-900">12. Contact Us</h2>
           <p>If you have privacy concerns or questions, please contact us at:</p>
           <ul className="list-none pl-0 mb-4">
-            <li>Email: contact@biruwa.org</li>
+            <li>Email: campaignbiruwa@gmail.com</li>
             <li>Website: www.biruwa.org</li>
           </ul>
         </div>

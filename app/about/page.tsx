@@ -30,7 +30,7 @@ export default function About() {
           <div className="text-center mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 relative inline-block">
               About Biruwa
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none">
+              <svg className="absolute -bottom-2 left-0 w-full animate-float-line" viewBox="0 0 200 8" preserveAspectRatio="none">
                 <path
                   d="M0,5 Q40,0 80,5 T160,5 T240,5"
                   fill="none"
