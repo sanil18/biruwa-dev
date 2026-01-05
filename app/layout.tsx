@@ -24,6 +24,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="https://github.com/sanil18/biruwa/blob/main/assets/new-logo%20(1).png?raw=true" type="image/png" sizes="32x32" />
+        <link rel="icon" href="https://github.com/sanil18/biruwa/blob/main/assets/new-logo%20(1).png?raw=true" type="image/png" sizes="16x16" />
+        <link rel="icon" href="https://github.com/sanil18/biruwa/blob/main/assets/new-logo%20(1).png?raw=true" type="image/png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="https://github.com/sanil18/biruwa/blob/main/assets/new-logo%20(1).png?raw=true" sizes="180x180" />
       </head>
       <body className="h-full">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
