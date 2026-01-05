@@ -58,7 +58,7 @@ The Earth doesn't need us to be perfect. She just needs us to be present, aware,
     {
       id: "biruwa-batika-christmas",
       title: "Biruwa Batika: Sustainable Christmas Market",
-      date: "December 25, 2025",
+      date: "December 25, 2024",
       venue: "Thamel, Kathmandu",
       participants: 27,
       sessionLedBy: "Biruwa Team",
