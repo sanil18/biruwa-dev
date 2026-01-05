@@ -3,14 +3,11 @@
 import { useParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calendar, MapPin, Users } from "lucide-react"
+import { ArrowLeft, Calendar, MapPin, Users, Tag } from "lucide-react"
 import { projectDb } from "@/lib/db"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import Image from "next/image"
-import { useState } from "react"
-import { Share2, Tag } from "lucide-react"
-import ShareModal from "@/components/share-modal"
 
 export default function ProjectDetail() {
   const params = useParams()
@@ -18,7 +15,6 @@ export default function ProjectDetail() {
   const projectId = params.id as string
 
   const project = projectDb.getById(projectId)
-  const [isShareModalOpen, setIsShareModalOpen] = useState(false)
 
   if (!project) {
     return (
@@ -211,36 +207,6 @@ export default function ProjectDetail() {
             )}
           </div>
 
-          {/* Share/Action Sector */}
-          <div className="mt-16">
-            <div className="relative p-8 sm:p-12 rounded-2xl bg-emerald-900 text-white shadow-xl overflow-hidden">
-              {/* Decorative Background elements */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-400/10 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-3xl"></div>
-
-              <div className="relative z-10 text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-4 font-display leading-tight">Shared knowledge is the <span className="text-emerald-400 italic">first seed</span> of change.</h3>
-                <p className="text-emerald-100/80 mb-8 max-w-lg mx-auto text-base">
-                  If you found this project inspiring, help us reach more people who are passionate about climate justice.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <Button
-                    onClick={() => setIsShareModalOpen(true)}
-                    className="bg-emerald-600 hover:bg-emerald-500 text-white rounded-full px-8 py-5 font-bold shadow-lg shadow-black/20 text-sm transition-all active:scale-95 group"
-                  >
-                    <Share2 className="mr-2 h-4 w-4" />
-                    Spread the Word
-                  </Button>
-                  <Button asChild className="bg-white hover:bg-emerald-50 text-emerald-900 rounded-full px-8 py-5 font-bold text-sm shadow-lg shadow-black/20">
-                    <Link href="/contact" className="flex items-center">
-                      <Tag className="mr-2 h-4 w-4" />
-                      Join the Conversation
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Back to Projects Button at Bottom */}
           <div className="flex justify-center mt-8 sm:mt-12">
@@ -260,12 +226,6 @@ export default function ProjectDetail() {
 
       <Footer />
 
-      <ShareModal
-        isOpen={isShareModalOpen}
-        onOpenChange={setIsShareModalOpen}
-        url={typeof window !== "undefined" ? window.location.href : ""}
-        title={project?.title || ""}
-      />
     </div >
   )
 }
