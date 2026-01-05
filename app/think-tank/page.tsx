@@ -23,7 +23,7 @@ export default function ThinkTankPage() {
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 font-display relative inline-block">
               Biruwa Think Tank
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none">
+              <svg className="absolute -bottom-4 left-0 w-full animate-float-line" viewBox="0 0 200 8" preserveAspectRatio="none">
                 <path
                   d="M0,5 Q40,0 80,5 T160,5 T240,5"
                   fill="none"
@@ -48,7 +48,7 @@ export default function ThinkTankPage() {
                 </div>
                 <h2 className="text-2xl font-bold mb-4 font-display text-purple-700">What is Biruwa’s Think Tank?</h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
-                  Biruwa’s Think Tank is an initiative developed by the four founders who wanted more people to talk
+                  Biruwa’s Think Tank is an initiative developed by the five co-founders who wanted more people to talk
                   about the current issues of climate justice and governance—and not just talk, but{" "}
                   <span className="font-bold text-purple-700 italic">think</span>.
                 </p>
@@ -81,7 +81,22 @@ export default function ThinkTankPage() {
           {/* Thematic Areas */}
           <section className="mb-24">
             <ScrollReveal className="text-center mb-12">
-              <h2 className="text-3xl font-bold font-display">Our Thematic Areas</h2>
+              <h2 className="text-3xl font-bold font-display relative inline-block">
+                Our Thematic Areas
+                <svg
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full animate-float-line"
+                  viewBox="0 0 100 8"
+                  preserveAspectRatio="none"
+                >
+                  <path
+                    d="M0,5 Q20,0 40,5 T80,5 T120,5"
+                    fill="none"
+                    stroke="#8B5CF6"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </h2>
               <div className="h-1 w-24 bg-purple-500 mx-auto mt-4 rounded-full" />
             </ScrollReveal>
 

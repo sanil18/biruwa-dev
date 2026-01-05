@@ -47,11 +47,11 @@ export default function NotebookTimeline() {
       <div className="timeline-item timeline-item-left opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 flex items-center">
         <div className="w-1/2 pr-8 text-right md:block hidden">
           <StickyNote color="amber" rotate="-rotate-2">
-            <span className="font-handwriting text-sm">2020</span>
+            <span className="font-handwriting text-sm">June 2024</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">The Beginning</h3>
-          <p className="text-slate-700">
-            Biruwa started as a small group of law students concerned about climate justice in Nepal.
+          <h3 className="text-lg font-bold mb-2 font-display">Climate Tank Accelerator Entry</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa began as a project after entering the Climate Tank Accelerator program.
           </p>
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-emerald-600">
@@ -61,11 +61,55 @@ export default function NotebookTimeline() {
         </div>
         <div className="w-1/2 pl-8 md:hidden block">
           <StickyNote color="amber" rotate="-rotate-2">
-            <span className="font-handwriting text-sm">2020</span>
+            <span className="font-handwriting text-sm">June 2024</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">The Beginning</h3>
-          <p className="text-slate-700">
-            Biruwa started as a small group of law students concerned about climate justice in Nepal.
+          <h3 className="text-lg font-bold mb-2 font-display">Climate Tank Accelerator Entry</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa began as a project after entering the Climate Tank Accelerator program.
+          </p>
+        </div>
+      </div>
+
+      <div className="timeline-item timeline-item-right opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 flex items-center">
+        <div className="w-1/2 pl-8">
+          <StickyNote color="emerald" rotate="rotate-2">
+            <span className="font-handwriting text-sm">Dec 13, 2024</span>
+          </StickyNote>
+          <h3 className="text-lg font-bold mb-2 font-display">Climate Tank – Country Winner</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa was selected as the country winner from Nepal in the Climate Tank Accelerator.
+          </p>
+        </div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-amber-500">
+          <div className="bg-amber-500 rounded-full p-2">
+            <Award className="h-5 w-5 text-white" />
+          </div>
+        </div>
+        <div className="w-1/2"></div>
+      </div>
+
+      <div className="timeline-item timeline-item-left opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 flex items-center">
+        <div className="w-1/2 pr-8 text-right md:block hidden">
+          <StickyNote color="blue" rotate="-rotate-1">
+            <span className="font-handwriting text-sm">Feb 2025</span>
+          </StickyNote>
+          <h3 className="text-lg font-bold mb-2 font-display">Winners’ Convening – U.S.</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa represented Nepal in the United States, engaging with winning teams from across South Asia.
+          </p>
+        </div>
+        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-blue-500">
+          <div className="bg-blue-500 rounded-full p-2">
+            <BookOpen className="h-5 w-5 text-white" />
+          </div>
+        </div>
+        <div className="w-1/2 pl-8 md:hidden block">
+          <StickyNote color="blue" rotate="-rotate-1">
+            <span className="font-handwriting text-sm">Feb 2025</span>
+          </StickyNote>
+          <h3 className="text-lg font-bold mb-2 font-display">Winners’ Convening – U.S.</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa represented Nepal in the United States, engaging with winning teams from across South Asia.
           </p>
         </div>
       </div>
@@ -73,11 +117,11 @@ export default function NotebookTimeline() {
       <div className="timeline-item timeline-item-right opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 flex items-center">
         <div className="w-1/2 pl-8">
           <StickyNote color="red" rotate="rotate-2">
-            <span className="font-handwriting text-sm">2021</span>
+            <span className="font-handwriting text-sm">April 2025</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">Growing the Team</h3>
-          <p className="text-slate-700">
-            Expanded to 11 members from diverse backgrounds including law, environmental science, and policy.
+          <h3 className="text-lg font-bold mb-2 font-display">Organizational Expansion</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa expanded its core membership from 4 members to 11 members from diverse fields.
           </p>
         </div>
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-red-500">
@@ -90,43 +134,43 @@ export default function NotebookTimeline() {
 
       <div className="timeline-item timeline-item-left opacity-0 translate-y-8 transition-all duration-700 ease-out mb-16 flex items-center">
         <div className="w-1/2 pr-8 text-right md:block hidden">
-          <StickyNote color="emerald" rotate="-rotate-1">
-            <span className="font-handwriting text-sm">2022</span>
+          <StickyNote color="purple" rotate="-rotate-2">
+            <span className="font-handwriting text-sm">June 2025</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">First Major Publication</h3>
-          <p className="text-slate-700">
-            Released our first research paper on climate justice frameworks for South Asia.
+          <h3 className="text-lg font-bold mb-2 font-display">Thinkers of Biruwa – New Cohort Onboarding</h3>
+          <p className="text-slate-700 text-sm">
+            A new batch of Think Tank joined the Biruwa Think Tank.
           </p>
         </div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-emerald-600">
-          <div className="bg-emerald-600 rounded-full p-2">
-            <BookOpen className="h-5 w-5 text-white" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-purple-500">
+          <div className="bg-purple-500 rounded-full p-2">
+            <Users className="h-5 w-5 text-white" />
           </div>
         </div>
         <div className="w-1/2 pl-8 md:hidden block">
-          <StickyNote color="emerald" rotate="-rotate-1">
-            <span className="font-handwriting text-sm">2022</span>
+          <StickyNote color="purple" rotate="-rotate-2">
+            <span className="font-handwriting text-sm">June 2025</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">First Major Publication</h3>
-          <p className="text-slate-700">
-            Released our first research paper on climate justice frameworks for South Asia.
+          <h3 className="text-lg font-bold mb-2 font-display">Thinkers of Biruwa – New Cohort Onboarding</h3>
+          <p className="text-slate-700 text-sm">
+            A new batch of Think Tank joined the Biruwa Think Tank.
           </p>
         </div>
       </div>
 
       <div className="timeline-item timeline-item-right opacity-0 translate-y-8 transition-all duration-700 ease-out flex items-center">
         <div className="w-1/2 pl-8">
-          <StickyNote color="amber" rotate="rotate-1">
-            <span className="font-handwriting text-sm">2023</span>
+          <StickyNote color="emerald" rotate="rotate-1">
+            <span className="font-handwriting text-sm">June–Dec 2025</span>
           </StickyNote>
-          <h3 className="text-xl font-bold mb-2 font-display">National Recognition</h3>
-          <p className="text-slate-700">
-            Received national award for youth-led environmental initiatives and launched our podcast.
+          <h3 className="text-lg font-bold mb-2 font-display">Project Paryawaran & Biruwa Sathi Launch</h3>
+          <p className="text-slate-700 text-sm">
+            Biruwa implemented community-focused initiatives, marking its transition from a project into a growing movement.
           </p>
         </div>
-        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-amber-500">
-          <div className="bg-amber-500 rounded-full p-2">
-            <Award className="h-5 w-5 text-white" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-full p-2 border-2 border-dashed border-emerald-500">
+          <div className="bg-emerald-500 rounded-full p-2">
+            <Leaf className="h-5 w-5 text-white" />
           </div>
         </div>
         <div className="w-1/2"></div>
