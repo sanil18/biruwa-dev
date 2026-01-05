@@ -1,0 +1,589 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Added beautiful hover effects for interactive elements */
+
+/* Enhanced button hover effects */
+@layer components {
+  .btn-hover-lift {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  /* Link hover effects with underline animation */
+  .link-hover-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Smooth color transitions */
+  .hover-emerald {
+    @apply transition-colors duration-300 hover:text-emerald-600;
+  }
+
+  .hover-bg-emerald {
+    @apply transition-colors duration-300 hover:bg-emerald-50;
+  }
+}
+
+/* Enhanced project card hover effects */
+.project-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+@media (min-width: 769px) {
+  .project-card:hover {
+    @apply shadow-2xl -translate-y-2;
+  }
+
+  .project-card:hover .project-card-border {
+    @apply translate-x-3 translate-y-3;
+  }
+}
+
+/* Smooth button hover with glow effect */
+button:not(:disabled):hover,
+.button-glow:hover {
+  @apply shadow-lg;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.3), 0 8px 10px -6px rgba(16, 185, 129, 0.2);
+}
+
+/* Icon hover animations */
+.icon-hover {
+  @apply transition-all duration-300;
+}
+
+.icon-hover:hover {
+  @apply scale-110 rotate-6;
+}
+
+/* Social icon hover with color transition */
+.social-icon {
+  @apply transition-all duration-300 ease-out;
+}
+
+.social-icon:hover {
+  @apply scale-125 -translate-y-1;
+  filter: brightness(1.2);
+}
+
+/* Image hover zoom effect */
+.image-hover-zoom {
+  @apply overflow-hidden;
+}
+
+.image-hover-zoom img {
+  @apply transition-transform duration-500 ease-out;
+}
+
+.image-hover-zoom:hover img {
+  @apply scale-110;
+}
+
+/* Sticky note hover tilt effect */
+.sticky-note-hover {
+  @apply transition-all duration-300;
+}
+
+@media (min-width: 769px) {
+  .sticky-note-hover:hover {
+    @apply scale-105;
+    transform: scale(1.05) rotate(2deg);
+  }
+}
+
+/* Footer link hover with slide animation */
+footer a {
+  @apply relative;
+}
+
+footer a::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300;
+}
+
+footer a:hover::after {
+  @apply w-full;
+}
+
+/* Navigation link active state glow */
+nav a.active {
+  @apply text-emerald-700;
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Input focus with glow */
+input:focus,
+textarea:focus {
+  @apply ring-2 ring-emerald-500 ring-offset-2;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Podcast section hover effects */
+.podcast-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+@media (min-width: 769px) {
+  .podcast-card:hover {
+    @apply shadow-lg -translate-y-1;
+  }
+}
+
+/* Badge hover effect */
+.badge-hover {
+  @apply transition-all duration-200;
+}
+
+.badge-hover:hover {
+  @apply scale-110 shadow-md;
+}
+
+/* Subtle pulse animation for CTAs */
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+}
+
+.cta-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+/* Floating animation for decorative yellow lines */
+@keyframes float-underline {
+  0%, 100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-4px) scaleX(1.02);
+    opacity: 1;
+  }
+}
+
+.animate-float-line {
+  animation: float-underline 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+input,
+textarea,
+select {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .card-hover,
+  .project-card,
+  button:hover,
+  .button-glow:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 158 55% 49%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 158 55% 49%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 158 55% 49%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 158 55% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Improve mobile performance */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent zoom on input focus on iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    /* Optimize for mobile scrolling */
+    overscroll-behavior: none;
+  }
+
+  #__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.font-hand {
+  font-family: "Caveat", cursive;
+}
+
+.font-handwriting {
+  font-family: "Kalam", cursive;
+}
+
+.font-display {
+  font-family: "Quicksand", sans-serif;
+}
+
+.timeline-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optimize cursor for mobile (disable custom cursors on touch devices) */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2310b981' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5'%3E%3C/path%3E%3Cpath d='M5 12l7-7 7 7'%3E%3C/path%3E%3C/svg%3E"),
+      auto;
+  }
+
+  a,
+  button {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f3969a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 19V5'%3E%3C/path%3E%3Cpath d='M5 12l7-7 7 7'%3E%3C/path%3E%3C/svg%3E"),
+      pointer;
+  }
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+  .cloud {
+    opacity: 0.4;
+    transform: scale(0.6);
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Smooth animations for background elements - only on desktop */
+@media (min-width: 769px) {
+  .cloud {
+    transition: all 3s ease;
+    will-change: transform, left, top;
+  }
+}
+
+/* Simplified background for mobile */
+body {
+  /* Changed gradient to slightly darker, more visible tones with subtle color mixture */
+  background:
+    radial-gradient(1200px circle at 12% 20%, rgba(56, 189, 248, 0.28), transparent 60%), /* blue side */
+    radial-gradient(1000px circle at 88% 80%, rgba(16, 185, 129, 0.22), transparent 60%), /* green side */
+    linear-gradient(180deg, #f7fbff 0%, #ecfdf5 45%, #ffffff 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Reduce background complexity on mobile */
+@media (max-width: 768px) {
+  body {
+    /* Updated mobile gradient to match new color scheme - keep full beauty */
+    background:
+      radial-gradient(800px circle at 18% 18%, rgba(56, 189, 248, 0.28), transparent 55%), /* blue side */
+      radial-gradient(900px circle at 88% 85%, rgba(16, 185, 129, 0.22), transparent 58%), /* green side */
+      linear-gradient(180deg, #f7fbff 0%, #ecfdf5 45%, #ffffff 100%);
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+
+  /* Hide noise texture on mobile */
+  body::before {
+    display: none;
+  }
+}
+
+/* Add subtle noise texture overlay - desktop only */
+@media (min-width: 769px) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Increased opacity from 0.3 to 0.15 for subtle texture without overpowering */
+    opacity: 0.15;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Floating animation for decorative elements - reduced on mobile */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes float-reverse {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+/* Reduce animation duration on mobile */
+@media (max-width: 768px) {
+  .float {
+    animation: float 12s ease-in-out infinite;
+  }
+
+  .float-reverse {
+    animation: float-reverse 14s ease-in-out infinite;
+  }
+}
+
+@media (min-width: 769px) {
+  .float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .float-reverse {
+    animation: float-reverse 9s ease-in-out infinite;
+  }
+}
+
+/* Subtle background pattern - desktop only */
+@media (min-width: 769px) {
+  .bg-pattern {
+    background-color: transparent;
+    background-image: radial-gradient(#10b981 0.5px, transparent 0.5px),
+      radial-gradient(#10b981 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.05;
+  }
+}
+
+/* Organic shapes - show simplified version on mobile */
+.organic-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .organic-shape {
+    opacity: 0.05;
+    filter: blur(30px);
+  }
+}
+
+/* Fix for footer spacing */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+/* Timeline alternating layout - mobile optimized */
+.timeline-item-right {
+  flex-direction: row-reverse;
+}
+
+.timeline-item-left {
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .timeline-item-right,
+  .timeline-item-left {
+    flex-direction: column;
+  }
+}
+
+/* Publication card improvements - mobile optimized */
+.publication-card {
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 769px) {
+  .publication-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.download-btn {
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 769px) {
+  .download-btn:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Improve touch targets */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent horizontal scroll */
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Improve scrolling performance on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce paint operations during scroll */
+  body {
+    will-change: auto;
+  }
+
+  /* Optimize background rendering */
+  body {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-auto {
+  will-change: auto;
+}
+
+/* Reduce GPU usage on mobile */
+@media (max-width: 768px) {
+  * {
+    will-change: auto !important;
+  }
+}
+
+/* Scroll reveal animations */
+.reveal-element {
+  opacity: 0;
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
